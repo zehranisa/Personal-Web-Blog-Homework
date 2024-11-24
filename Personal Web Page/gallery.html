@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="gallery">
+    <h1>Gallery</h1>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <a href="post-details.html?id=1">
+          <img src="fotolar/kopek1.jpeg" alt="Dog 1" loading="lazy">
+        </a>
+      </div>
+      <div class="gallery-item">
+        <a href="post-details.html?id=2">
+          <img src="fotolar/kopek2.jpeg" alt="Dog 2" loading="lazy">
+        </a>
+      </div>
+      <div class="gallery-item">
+        <a href="post-details.html?id=3">
+          <img src="fotolar/kopek3.jpeg" alt="Dog 3" loading="lazy">
+        </a>
+      </div>
+      <div class="gallery-item">
+        <a href="post-details.html?id=4">
+          <img src="fotolar/kopek4.jpeg" alt="Dog 4" loading="lazy">
+        </a>
+      </div>
+      <div class="gallery-item">
+        <a href="post-details.html?id=5">
+          <img src="fotolar/kopek5.jpeg" alt="Dog 5" loading="lazy">
+        </a>
+      </div>
+      <div class="gallery-item">
+        <a href="post-details.html?id=6">
+          <img src="fotolar/kopek6.jpeg" alt="Dog 6" loading="lazy">
+        </a>
+      </div>
+      <div class="gallery-item">
+        <a href="post-details.html?id=7">
+          <img src="fotolar/kopek7.jpeg" alt="Dog 7" loading="lazy">
+        </a>
+      </div>
+      <div class="gallery-item">
+        <a href="post-details.html?id=8">
+          <img src="fotolar/kopek8.jpeg" alt="Dog 8" loading="lazy">
+        </a>
+      </div>
+      <div class="gallery-item">
+        <a href="post-details.html?id=9">
+          <img src="fotolar/kopek9.jpeg" alt="Dog 9" loading="lazy">
+        </a>
+      </div>
+      <div class="gallery-item">
+        <a href="post-details.html?id=10">
+          <img src="fotolar/kopek10.jpeg" alt="Dog 10" loading="lazy">
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2024 Blog Name</p>
+</footer>
+
+<style>
+  .gallery {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+
+  .gallery-item img:hover {
+    transform: scale(1.1);
+  }
+</style>
+
+</body>
+</html>

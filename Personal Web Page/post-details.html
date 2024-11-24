@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post Details</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="post-detail">
+    <img id="post-image" src="" alt="Post Image">
+    <h1 id="post-title"></h1>
+    <p id="post-author-date"></p>
+    <p id="post-content"></p>
+    <p>Likes: <span id="post-likes"></span> | Comments: <span id="post-comments"></span></p>
+  </section>
+
+  <section class="comments-section">
+    <h2>Comments</h2>
+    <div id="comments-list">
+      <!-- Comments will be dynamically loaded here -->
+    </div>
+    <form id="comment-form">
+      <label for="comment-text">Leave a Comment:</label>
+      <textarea id="comment-text" required></textarea>
+      <button type="submit">Submit Comment</button>
+    </form>
+  </section>
+
+  <section class="search-section">
+    <input type="text" id="search-bar" placeholder="Search posts..." oninput="search()">
+    <div id="search-results"></div>
+  </section>
+</main>
+
+
+<footer>
+  <p>&copy; 2024 Blog Adı</p>
+</footer>
+
+<script>
+  const posts = {
+    1: {
+      title: "Dogs and Humans' Special Bond",
+      image: "fotolar/kopek1.jpeg",
+      author: "Ahmet Yılmaz",
+      date: "2024-11-20",
+      content: "Dogs have been the best friends of humans for thousands of years. In this article, we will examine their effects on humans...",
+      likes: 5250,
+      comments: [
+        { author: "Serkan", content: "Wonderful article! Dogs are truly special creatures." },
+        { author: "Ayşe", content: "I would love it if you could provide more information about dogs." }
+      ]
+    },
+    2: {
+      title: "Important Tips for Dog Care",
+      image: "fotolar/kopek2.jpeg",
+      author: "Elif Demir",
+      date: "2024-11-18",
+      content: "You can read this guide to learn how to take care of dogs. Everything from feeding to exercise is covered here...",
+      likes: 1180,
+      comments: [
+        { author: "Murat", content: "Very useful information, thanks!" },
+        { author: "Zeynep", content: "A great guide for new dog owners." }
+      ]
+    },
+    3: {
+      title: "Walking with Dogs: Benefits for Health",
+      image: "fotolar/kopek3.jpeg",
+      author: "Mehmet Kaya",
+      date: "2024-11-17",
+      content: "We will discuss the health benefits of walking with dogs, both for your dog and yourself.",
+      likes: 1400,
+      comments: [
+        { author: "Gökhan", content: "Walking is a great exercise for dogs, very true!" },
+        { author: "Elif", content: "I walk with my dog every day, it really helps." }
+      ]
+    },
+    4: {
+      title: "Playtime for Dogs: Fun Activities",
+      image: "fotolar/kopek4.jpeg",
+      author: "Ayşe Yıldız",
+      date: "2024-11-15",
+      content: "We recommend fun games and activities to support the physical and mental health of dogs.",
+      likes: 890,
+      comments: [
+        { author: "Ömer", content: "I entertain my dog a lot, your suggestions were very helpful." },
+        { author: "Duygu", content: "It's really fun trying new activities with my dog!" }
+      ]
+    },
+    5: {
+      title: "Behavior Problems and Solutions in Dogs",
+      image: "fotolar/kopek5.jpeg",
+      author: "Ali Çetin",
+      date: "2024-11-12",
+      content: "A guide to common behavior problems in dogs, their causes, and solutions for these problems.",
+      likes: 1050,
+      comments: [
+        { author: "Furkan", content: "My dog had some behavioral issues, you were very helpful." },
+        { author: "Nisa", content: "A good guide, it solved the problems with my dog." }
+      ]
+    },
+    6: {
+      title: "Dogs' Food Needs and Diets",
+      image: "fotolar/kopek6.jpeg",
+      author: "Zeynep Tekin",
+      date: "2024-11-10",
+      content: "Everything you need to know about suitable foods and diets for dogs.",
+      likes: 670,
+      comments: [
+        { author: "Ayhan", content: "Very valuable information for my dog's nutrition." },
+        { author: "Merve", content: "I'm trying new diets for my dog, I really liked this article." }
+      ]
+    },
+    7: {
+      title: "Health Checks and Vaccinations in Dogs",
+      image: "fotolar/kopek7.jpeg",
+      author: "Ahmet Karaca",
+      date: "2024-11-07",
+      content: "Everything you need to know about regular health checks and necessary vaccinations for dogs.",
+      likes: 320,
+      comments: [
+        { author: "Seda", content: "I make sure to take my dog for regular checkups to keep him healthy." },
+        { author: "Kaan", content: "I would like to get more information about vaccinations and health checks." }
+      ]
+    },
+    8: {
+      title: "Training Dogs: Basic Commands and Tips",
+      image: "fotolar/kopek8.jpeg",
+      author: "Emine Sözbir",
+      date: "2024-11-05",
+      content: "Ways to teach basic commands to your dogs and tips to keep in mind during training.",
+      likes: 450,
+      comments: [
+        { author: "Gökçe", content: "My dog used to have trouble with training, this article really helped." },
+        { author: "Cem", content: "I want to try new methods for training." }
+      ]
+    },
+    9: {
+      title: "Psychology of Dogs: Their Emotional States and Behaviors",
+      image: "fotolar/kopek9.jpeg",
+      author: "Fatma Yılmaz",
+      date: "2024-11-02",
+      content: "How the emotional state and psychology of dogs affect their behavior, and what can we do about it?",
+      likes: 370,
+      comments: [
+        { author: "Serkan", content: "The psychology of dogs is really important." },
+        { author: "Deniz", content: "I learned a lot about my dog's emotional needs." }
+      ]
+    },
+    10: {
+      title: "Home Security Measures for Dogs",
+      image: "fotolar/kopek10.jpeg",
+      author: "Gülcan Demir",
+      date: "2024-10-30",
+      content: "Tips for ensuring your dogs are safe at home with proper security measures.",
+      likes: 560,
+      comments: [
+        { author: "İsmail", content: "It's really important to take security measures at home, your article was very helpful." },
+        { author: "Aylin", content: "These suggestions are great for keeping my dog safe at home." }
+      ]
+    }
+  };
+
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const postId = urlParams.get('id');
+
+  const postContainer = document.querySelector('.post-detail');
+  const commentsList = document.getElementById('comments-list');
+
+  if (posts[postId]) {
+    const post = posts[postId];
+    document.getElementById('post-title').textContent = post.title;
+    document.getElementById('post-image').src = post.image;
+    document.getElementById('post-author-date').textContent = `Yazar: ${post.author} | Tarih: ${post.date}`;
+    document.getElementById('post-content').textContent = post.content;
+    document.getElementById('post-likes').textContent = post.likes;
+    document.getElementById('post-comments').textContent = post.comments.length;
+
+    loadComments();
+
+    // Yorumları `localStorage`'tan yükleme
+    function loadComments() {
+      const savedComments = localStorage.getItem('comments_' + postId);
+      if (savedComments) {
+        post.comments = JSON.parse(savedComments);
+      }
+      post.comments.forEach(comment => {
+        const commentElement = document.createElement('div');
+        commentElement.classList.add('comment');
+        commentElement.innerHTML = `<strong>${comment.author}</strong><p>${comment.content}</p>`;
+        commentsList.appendChild(commentElement);
+      });
+    }
+
+    // Yorumları kaydetme fonksiyonu
+    function saveComments() {
+      localStorage.setItem('comments_' + postId, JSON.stringify(post.comments));
+    }
+
+    // Yorum ekleme
+    document.getElementById('comment-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const commentText = document.getElementById('comment-text').value;
+
+      // Yeni yorum nesnesi
+      const newComment = {
+        author: "randomUser",  // Sabit bir kullanıcı adı
+        content: commentText
+      };
+
+      // Yeni yorumu listeye ekle
+      post.comments.push(newComment);
+
+      // Yeni yorumu sayfada göster
+      const newCommentElement = document.createElement('div');
+      newCommentElement.classList.add('comment');
+      newCommentElement.innerHTML = `<strong>${newComment.author}</strong><p>${newComment.content}</p>`;
+      commentsList.appendChild(newCommentElement);
+
+      // Yorumları kaydet
+      saveComments();
+
+      // Yorum formunu sıfırlama
+      document.getElementById('comment-text').value = '';
+      document.getElementById('post-comments').textContent = post.comments.length;  // Yorum sayısını güncelle
+      alert("Your comment has been added successfully!");
+    });
+  } else {
+    postContainer.innerHTML = ` <h1>Post Not Found</h1><p>The post you are looking for is not available. please come back.</p>`;
+  }
+
+</script>
+
+</body>
+</html>

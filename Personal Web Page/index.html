@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The latest articles, care tips, and popular content about animals and dogs.">
+  <title>Home Page</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Basic styling for popup */
+    #registration-popup {
+      display: none; /* Initially hidden */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+      z-index: 1000; /* Make sure it's on top */
+    }
+
+    .popup-content {
+      background-color: #8d6c6c;
+      padding: 20px;
+      margin: 50px auto;
+      width: 300px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .popup-content h2 {
+      text-align: center;
+    }
+
+    .popup-content form label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    .popup-content form input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #965959;
+      border-radius: 4px;
+    }
+
+    .popup-content button {
+      width: 100%;
+      padding: 10px;
+      background-color: #b05252;
+      color: #bb7474;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .popup-content button:hover {
+      background-color: #b05252;
+    }
+
+    .popup-content span {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Lucyy&Cookies Mom</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <!-- Add a Register link to the menu -->
+      <li><a href="javascript:void(0);" onclick="openPopup()">Register</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <!-- Blog Overview Section -->
+  <section>
+    <h2>About the Blog</h2>
+    <p>On our blog, you can find the latest information about animals, especially dogs, care tips, and educational content. Follow the latest topics and our popular posts!</p>
+  </section>
+
+  <!-- Recent Posts Section -->
+  <section>
+    <h2>Recent Posts</h2>
+    <div class="recent-posts">
+      <div class="post">
+        <h3><a href="post-details.html?id=10">Post Title 1</a></h3>
+        <p>Date: November 24, 2024</p>
+        <img src="fotolar/kopek10.jpeg" alt="Post 10">
+      </div>
+      <div class="post">
+        <h3><a href="post-details.html?id=9">Post Title 2</a></h3>
+        <p>Date: November 22, 2024</p>
+        <img src="fotolar/kopek9.jpeg" alt="Post 9">
+      </div>
+      <div class="post">
+        <h3><a href="post-details.html?id=8">Post Title 3</a></h3>
+        <p>Date: November 20, 2024</p>
+        <img src="fotolar/kopek8.jpeg" alt="Post 8">
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Posts Section -->
+  <section>
+    <h2>Popular Posts</h2>
+    <div class="popular-posts">
+      <div class="post">
+        <a href="post-details.html?id=1"><img src="fotolar/kopek1.jpeg" alt="Popular Post 1"></a>
+        <p><a href="post-details.html?id=1">Popular Post 1</a></p>
+      </div>
+      <div class="post">
+        <a href="post-details.html?id=2"><img src="fotolar/kopek2.jpeg" alt="Popular Post 2"></a>
+        <p><a href="post-details.html?id=2">Popular Post 2</a></p>
+      </div>
+      <div class="post">
+        <a href="post-details.html?id=3"><img src="fotolar/kopek3.jpeg" alt="Popular Post 3"></a>
+        <p><a href="post-details.html?id=3">Popular Post 3</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Search Section -->
+  <section>
+    <h2>Search</h2>
+    <input type="text" id="search-bar" placeholder="Search something...">
+    <button onclick="search()">Search</button>
+    <div id="search-results"></div>
+  </section>
+</main>
+
+<!-- Registration Popup Section -->
+<div id="registration-popup">
+  <div class="popup-content">
+    <span onclick="closePopup()">×</span>
+    <h2>Register</h2>
+    <form>
+      <label for="username">Username:</label>
+      <input type="text" id="username" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" required>
+      <button type="submit">Register</button>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2024 Lucyy&Cookies Mom</p>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  // Function to open the registration popup
+  function openPopup() {
+    document.getElementById('registration-popup').style.display = 'block';
+  }
+
+  // Function to close the registration popup
+  function closePopup() {
+    document.getElementById('registration-popup').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>

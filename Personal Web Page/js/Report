@@ -1,0 +1,34 @@
+Personal Blog Website Project
+Author: [Your Name]
+Course: Web Programming
+Instructor: [Instructor's Name]
+Submission Date: November 24, 2024
+
+Contents
+Introduction
+Technologies Used and Technical Requirements
+Additional Features
+Project Planning Process
+Conclusion and Discussion
+References
+Program Codes
+Introduction
+The purpose of this project is to create a personal blog website that allows users to share and engage with content related to various topics of personal interest. The website is designed to provide an interactive platform where users can read articles, explore categories, view multimedia content, and leave comments. This blog aims to create an aesthetically pleasing user experience with a clean layout and dynamic content.
+
+Key features of the website include:
+
+A home page that introduces the blog and displays featured posts.
+A blog post section where users can read full articles.
+A gallery for visual content related to the posts.
+A contact form for users to reach out to the blog owner.
+A comment section where users can interact with the posts.
+Technologies Used and Technical Requirements
+The project utilizes the following technologies:
+
+HTML: To structure the website's content, creating a well-organized layout for the pages.
+CSS: For styling the pages and ensuring a cohesive visual theme. Responsive design techniques are used to make the website adaptable to various screen sizes.
+JavaScript: To enhance interactivity, such as enabling dynamic elements like a comment section, form validation, and interactive slideshows.
+Responsive Design: Ensures that the website is accessible and visually appealing across all devices, including desktops, tablets, and smartphones.
+Optional Server-Side Programming: If required, server-side technologies (like PHP or Node.js) could be used to manage form submissions and comments dynamically, although this is not part of the initial scope of the project.
+Technical Requirements include:
+
