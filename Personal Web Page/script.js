@@ -12,7 +12,7 @@ function search() {
     post.title.toLowerCase().includes(searchTerm) || post.content.toLowerCase().includes(searchTerm)
   );
 
-  resultsDiv.innerHTML = ""; // Önceki sonuçları temizle
+  resultsDiv.innerHTML = "";
   if (results.length > 0) {
     results.forEach(result => {
       const resultItem = document.createElement('div');
@@ -23,7 +23,7 @@ function search() {
     resultsDiv.innerHTML = "<p>Sonuç bulunamadı.</p>";
   }
 }
-// Post detaylarını göstermek için fonksiyon
+
 function showPostDetails(postId) {
   const postDetails = document.getElementById('post-details');
   const postTitle = document.getElementById('post-title');
@@ -32,7 +32,7 @@ function showPostDetails(postId) {
   const postLikes = document.getElementById('post-likes');
   const postComments = document.getElementById('post-comments');
 
-  // Makale verileri
+
   const posts = {
     post1: {
       title: "Köpek Bakımı İpuçları",
@@ -60,23 +60,23 @@ function showPostDetails(postId) {
     }
   };
 
-  // Seçilen postun detaylarını güncelle
+
   postTitle.textContent = posts[postId].title;
   postAuthor.textContent = `Yayınlayan: ${posts[postId].author}`;
   postDate.textContent = `Tarih: ${posts[postId].date}`;
   postLikes.textContent = `Beğeniler: ${posts[postId].likes}`;
   postComments.textContent = `Yorumlar: ${posts[postId].comments}`;
 
-  // Post detaylarını göster
+
   postDetails.style.display = 'block';
 }
 
-// Post detaylarını kapatmak için fonksiyon
+
 function closePostDetails() {
   const postDetails = document.getElementById('post-details');
   postDetails.style.display = 'none';
 }
-// URL parametresinden ID'yi al
+
 const urlParams = new URLSearchParams(window.location.search);
 const postId = urlParams.get('id');
 
@@ -174,10 +174,10 @@ const postId = urlParams.get('id');
     };
 
 
-// Post ID'ye göre detayları al
+
 const post = posts[postId];
 
-// Detayları sayfada göster
+
 if (post) {
   document.getElementById('post-image').src = post.image;
   document.getElementById('post-title').textContent = post.title;
@@ -187,10 +187,10 @@ if (post) {
   document.getElementById('post-comments').textContent = `Yorumlar: ${post.comments}`;
   document.getElementById('post-content').textContent = post.content;
 } else {
-  // Eğer geçersiz bir ID varsa
+
   document.getElementById('post-detail').innerHTML = "<p>Bu yazı bulunamadı.</p>";
 }
-// Gönderi Verileri
+
 const posts = [
   {
     id: 10,
@@ -223,7 +223,7 @@ const posts = [
 
 ];
 
-// En Son Gönderiler
+
 const recentPostsContainer = document.getElementById("recent-posts");
 posts.slice(0, 3).forEach((post) => {
   recentPostsContainer.innerHTML += `
@@ -234,7 +234,7 @@ posts.slice(0, 3).forEach((post) => {
   `;
 });
 
-// En Popüler Gönderiler
+
 const popularPostsContainer = document.getElementById("popular-posts");
 posts.slice(0, 3).forEach((post) => {
   popularPostsContainer.innerHTML += `

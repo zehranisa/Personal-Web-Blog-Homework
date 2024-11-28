@@ -1,4 +1,3 @@
-/* Genel stil ve Reset */
 * {
   margin: 0;
   padding: 0;
@@ -7,22 +6,21 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background: linear-gradient(135deg, #f06292, #3f51b5); /* Enerjik renk geçişi */
+  background: linear-gradient(135deg, #f06292, #3f51b5);
   color: #fff;
   padding: 0;
   margin: 0;
-  min-height: 100vh; /* Sayfanın yüksekliği kadar büyür */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* Başlıklar */
 h1, h2, h3, p {
-  font-family: 'Roboto', sans-serif; /* Başlık fontu değişti */
+  font-family: 'Roboto', sans-serif;
 }
 
 header {
-  background: rgba(0, 0, 0, 0.5); /* Koyu arka plan */
+  background: rgba(0, 0, 0, 0.5);
   padding: 20px 0;
   text-align: center;
 }
@@ -67,10 +65,9 @@ h2 {
   font-size: 2.5em;
   margin-bottom: 30px;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
-  font-family: 'Poppins', sans-serif; /* Başlık fontu farklı */
+  font-family: 'Poppins', sans-serif;
 }
 
-/* Popüler gönderiler */
 .popular-posts {
   display: flex;
   gap: 20px;
@@ -81,18 +78,18 @@ h2 {
 }
 
 .popular-posts .post {
-  background: rgba(255, 255, 255, 0.8); /* Saydam arka plan */
+  background: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 20px;
   width: 250px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  backdrop-filter: blur(5px); /* Saydam arka planı bulanıklaştırma */
+  backdrop-filter: blur(5px);
 }
 
 .popular-posts .post:hover {
-  transform: translateY(-10px); /* Hoverda yukarı kayma efekti */
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); /* Daha büyük gölge */
+  transform: translateY(-10px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 
 .popular-posts .post img {
@@ -103,22 +100,20 @@ h2 {
 }
 
 .popular-posts .post img:hover {
-  transform: scale(1.1); /* Görsel hover efekti */
+  transform: scale(1.1);
 }
 
-/* Link stilini değiştirme */
 a {
-  color: #f06292; /* Link rengini parlak pembe yapma */
-  text-decoration: none; /* Alt çizgiyi kaldırma */
+  color: #f06292;
+  text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #fff; /* Hoverda beyaz yapma */
+  color: #fff;
 }
 
-/* Buton */
 button {
   background: #f06292;
   color: #fff;
@@ -131,10 +126,9 @@ button {
 }
 
 button:hover {
-  background: #e91e63; /* Hoverda daha koyu pembe */
+  background: #e91e63;
 }
 
-/* Arama kısmı */
 .search-container {
   margin-top: 40px;
   display: flex;
@@ -149,7 +143,7 @@ button:hover {
   border: none;
   outline: none;
   font-size: 1.2em;
-  background: rgba(255, 255, 255, 0.8); /* Saydam arka plan */
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(8px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -174,7 +168,6 @@ button:hover {
   background-color: #e91e63;
 }
 
-/* Contact bölmesi */
 .contact-section {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 40px 20px;
@@ -233,7 +226,6 @@ button:hover {
   background: #e91e63;
 }
 
-/* Duyarlı Tasarım */
 @media (max-width: 768px) {
   .popular-posts {
     flex-direction: column;
@@ -284,7 +276,6 @@ button:hover {
   }
 }
 
-/* Animasyonlar */
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -297,7 +288,6 @@ button:hover {
   }
 }
 
-/* Anasayfa Düğmesi Animasyonu */
 .main-btn {
   animation: pulse 1s infinite ease-in-out;
 }
@@ -328,12 +318,11 @@ footer {
   padding: 10px 0;
   width: 100%;
   position: relative;
-  margin-top: auto; /* İçeriğin sonuna doğru kaymasını sağlar */
+  margin-top: auto;
 }
-/* Arama Bölmesi */
 section {
-  background-color: rgba(0, 0, 0, 0.5); /* Yarı saydam koyu arka plan */
-  padding: 20px 20px; /* Üst ve alt padding'i küçült */
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px 20px;
   margin-top: 50px;
   border-radius: 15px;
   text-align: center;
@@ -342,7 +331,7 @@ section {
 }
 
 section h2 {
-  font-size: 2em; /* Başlık boyutunu biraz küçült */
+  font-size: 2em;
   margin-bottom: 20px;
   font-family: 'Poppins', sans-serif;
   color: #fff;
@@ -350,27 +339,27 @@ section h2 {
 }
 
 #search-bar {
-  padding: 10px 18px; /* Arama kutusunun boyutlarını küçült */
+  padding: 10px 18px;
   border-radius: 30px;
-  width: 50%; /* Arama kutusunun genişliğini daralt */
+  width: 50%;
   border: none;
   outline: none;
-  font-size: 1.1em; /* Yazı boyutunu küçült */
-  background: rgba(255, 255, 255, 0.8); /* Saydam arka plan */
+  font-size: 1.1em;
+  background: rgba(255, 255, 255, 0.8);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  margin-bottom: 10px; /* Arama kutusunun altındaki boşluğu azalt */
+  margin-bottom: 10px;
 }
 
 #search-bar:focus {
-  background: rgba(255, 255, 255, 1); /* Odaklandığında arka planı beyaz yap */
+  background: rgba(255, 255, 255, 1);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 button {
-  background: #f06292; /* Pembe buton */
+  background: #f06292;
   color: white;
-  padding: 10px 20px; /* Butonun boyutunu küçült */
+  padding: 10px 20px;
   border: none;
   border-radius: 30px;
   font-size: 1.1em;
@@ -379,14 +368,13 @@ button {
 }
 
 button:hover {
-  background: #e91e63; /* Hoverda koyu pembe */
+  background: #e91e63;
 }
 
 
-/* Arama Bölmesi */
 section {
-  background-color: rgba(0, 0, 0, 0.5); /* Yarı saydam koyu arka plan */
-  padding: 20px 20px; /* Üst ve alt padding'i küçült */
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px 20px;
   margin-top: 50px;
   border-radius: 15px;
   text-align: center;
@@ -395,7 +383,7 @@ section {
 }
 
 section h2 {
-  font-size: 2em; /* Başlık boyutunu biraz küçült */
+  font-size: 2em;
   margin-bottom: 20px;
   font-family: 'Poppins', sans-serif;
   color: #fff;
@@ -403,27 +391,27 @@ section h2 {
 }
 
 #search-bar {
-  padding: 10px 18px; /* Arama kutusunun boyutlarını küçült */
+  padding: 10px 18px;
   border-radius: 30px;
-  width: 50%; /* Arama kutusunun genişliğini daralt */
+  width: 50%;
   border: none;
   outline: none;
-  font-size: 1.1em; /* Yazı boyutunu küçült */
-  background: rgba(255, 255, 255, 0.8); /* Saydam arka plan */
+  font-size: 1.1em;
+  background: rgba(255, 255, 255, 0.8);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  margin-bottom: 10px; /* Arama kutusunun altındaki boşluğu azalt */
+  margin-bottom: 10px;
 }
 
 #search-bar:focus {
-  background: rgba(255, 255, 255, 1); /* Odaklandığında arka planı beyaz yap */
+  background: rgba(255, 255, 255, 1);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 button {
-  background: #f06292; /* Pembe buton */
+  background: #f06292;
   color: white;
-  padding: 10px 20px; /* Butonun boyutunu küçült */
+  padding: 10px 20px;
   border: none;
   border-radius: 30px;
   font-size: 1.1em;
@@ -432,7 +420,7 @@ button {
 }
 
 button:hover {
-  background: #e91e63; /* Hoverda koyu pembe */
+  background: #e91e63;
 }
 h2:hover{
   color: #b3d4fc;
@@ -460,8 +448,6 @@ h2:hover{
   flex-direction: column;
   gap: 15px;
 }
-
-/* Input ve Textarea Stil Ayarları */
 input, textarea {
   padding: 12px 18px;
   border: 1px solid #ccc;

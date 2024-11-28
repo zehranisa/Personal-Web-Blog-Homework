@@ -7,7 +7,6 @@
   <title>Home Page</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Basic styling for popup */
     #registration-popup {
       display: none; /* Initially hidden */
       position: fixed;
@@ -86,54 +85,50 @@
 </header>
 
 <main>
-  <!-- Blog Overview Section -->
   <section>
     <h2>About the Blog</h2>
     <p>On our blog, you can find the latest information about animals, especially dogs, care tips, and educational content. Follow the latest topics and our popular posts!</p>
   </section>
 
-  <!-- Recent Posts Section -->
   <section>
     <h2>Recent Posts</h2>
     <div class="recent-posts">
       <div class="post">
-        <h3><a href="post-details.html?id=10">Post Title 1</a></h3>
+        <h3><a href="post-details.html?id=10">Home Security for dogs</a></h3>
         <p>Date: November 24, 2024</p>
         <img src="fotolar/kopek10.jpeg" alt="Post 10">
       </div>
       <div class="post">
-        <h3><a href="post-details.html?id=9">Post Title 2</a></h3>
+        <h3><a href="post-details.html?id=9">DOgs Behaviors</a></h3>
         <p>Date: November 22, 2024</p>
         <img src="fotolar/kopek9.jpeg" alt="Post 9">
       </div>
       <div class="post">
-        <h3><a href="post-details.html?id=8">Post Title 3</a></h3>
+        <h3><a href="post-details.html?id=8">Basic Commands</a></h3>
         <p>Date: November 20, 2024</p>
         <img src="fotolar/kopek8.jpeg" alt="Post 8">
       </div>
     </div>
   </section>
 
-  <!-- Popular Posts Section -->
   <section>
     <h2>Popular Posts</h2>
     <div class="popular-posts">
       <div class="post">
         <a href="post-details.html?id=1"><img src="fotolar/kopek1.jpeg" alt="Popular Post 1"></a>
-        <p><a href="post-details.html?id=1">Popular Post 1</a></p>
+        <p><a href="post-details.html?id=1">Our Speciasl Bond</a></p>
       </div>
       <div class="post">
         <a href="post-details.html?id=2"><img src="fotolar/kopek2.jpeg" alt="Popular Post 2"></a>
-        <p><a href="post-details.html?id=2">Popular Post 2</a></p>
+        <p><a href="post-details.html?id=2">Dog Care</a></p>
       </div>
       <div class="post">
         <a href="post-details.html?id=3"><img src="fotolar/kopek3.jpeg" alt="Popular Post 3"></a>
-        <p><a href="post-details.html?id=3">Popular Post 3</a></p>
+        <p><a href="post-details.html?id=3">Walking with Dinogs</a></p>
       </div>
     </div>
   </section>
 
-  <!-- Search Section -->
   <section>
     <h2>Search</h2>
     <input type="text" id="search-bar" placeholder="Search something...">
@@ -142,7 +137,6 @@
   </section>
 </main>
 
-<!-- Registration Popup Section -->
 <div id="registration-popup">
   <div class="popup-content">
     <span onclick="closePopup()">×</span>
@@ -165,12 +159,10 @@
 
 <script src="script.js"></script>
 <script>
-  // Function to open the registration popup
   function openPopup() {
     document.getElementById('registration-popup').style.display = 'block';
   }
 
-  // Function to close the registration popup
   function closePopup() {
     document.getElementById('registration-popup').style.display = 'none';
   }

@@ -32,7 +32,6 @@
   <section class="comments-section">
     <h2>Comments</h2>
     <div id="comments-list">
-      <!-- Comments will be dynamically loaded here -->
     </div>
     <form id="comment-form">
       <label for="comment-text">Leave a Comment:</label>
@@ -194,7 +193,7 @@
 
     loadComments();
 
-    // Yorumları `localStorage`'tan yükleme
+
     function loadComments() {
       const savedComments = localStorage.getItem('comments_' + postId);
       if (savedComments) {
@@ -208,35 +207,28 @@
       });
     }
 
-    // Yorumları kaydetme fonksiyonu
     function saveComments() {
       localStorage.setItem('comments_' + postId, JSON.stringify(post.comments));
     }
 
-    // Yorum ekleme
     document.getElementById('comment-form').addEventListener('submit', function (e) {
       e.preventDefault();
       const commentText = document.getElementById('comment-text').value;
 
-      // Yeni yorum nesnesi
       const newComment = {
         author: "randomUser",  // Sabit bir kullanıcı adı
         content: commentText
       };
 
-      // Yeni yorumu listeye ekle
       post.comments.push(newComment);
 
-      // Yeni yorumu sayfada göster
       const newCommentElement = document.createElement('div');
       newCommentElement.classList.add('comment');
       newCommentElement.innerHTML = `<strong>${newComment.author}</strong><p>${newComment.content}</p>`;
       commentsList.appendChild(newCommentElement);
 
-      // Yorumları kaydet
       saveComments();
 
-      // Yorum formunu sıfırlama
       document.getElementById('comment-text').value = '';
       document.getElementById('post-comments').textContent = post.comments.length;  // Yorum sayısını güncelle
       alert("Your comment has been added successfully!");
